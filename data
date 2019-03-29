@@ -1,0 +1,7 @@
+grep -a 'Groningen' data.csv > groningen.csv
+grep -a 'Appingedam' data.csv >> dorpen.csv
+grep -a 'Stadskanaal' data.csv >> dorpen.csv
+grep -a 'Westerwold' data.csv >> dorpen.csv
+
+awk -F";" '{groep1+=$15; groep2+=$16; groep3+=$17; groep4+=$18; groep5+=$19; groep6+=$20; groep7+=$21; groep8+=$22; total+=$23}END{print groep1";"groep2";"groep3";"groep4";"groep5";"groep6";"groep7";"groep8";"total}' ./groningen.csv >> output.csv
+awk -F";" '{groep1+=$15; groep2+=$16; groep3+=$17; groep4+=$18; groep5+=$19; groep6+=$20; groep7+=$21; groep8+=$22; total+=$23}END{print groep1";"groep2";"groep3";"groep4";"groep5";"groep6";"groep7";"groep8";"total}' ./dorpen.csv >> output.csv
